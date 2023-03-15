@@ -1,44 +1,22 @@
-# udacity-stedi
-Udacity STEDI project on AWS
+# Udacity Data Engineering Project on AWS
+
+Udacity STEDI STEDI Human Balance Analytics ETL
 
 
-### Data
+#### Landing Zone Table DDL files:
+1. [customer_landing.sql](./scripts/customer_landing.sql)
+2. [accelerometer_landing.sql](./scripts/accelerometer_landing.sql)
 
-1. Customer Records (from fulfillment and the STEDI website):
+#### AWS Glue Job files:
+1. [customer_landing_to_trusted.py](./scripts/customer_landing_to_trusted.py)
+2. [customer_trusted_to_curated.py](./scripts/customer_trusted_to_curated.py)
+3. [accelerometer_landing_to_trusted.py](./scripts/accelerometer_landing_to_trusted.py)
+4. [step_trainer_landing_to_trusted.py](./scripts/step_trainer_landing_to_trusted.py)
+5. [trainer_trusted_to_curated.py](./scripts/trainer_trusted_to_curated.py)
 
-AWS S3 Bucket URI - s3://cd0030bucket/customers/
+#### Athena table screenshots:
+1. [customer landing](./images/accelerometer_landing.png)
 
-contains the following fields:
+2. [customer trusted](./images/customer_landing.png)
 
-serialnumber
-sharewithpublicasofdate
-birthday
-registrationdate
-sharewithresearchasofdate
-customername
-email
-lastupdatedate
-phone
-sharewithfriendsasofdate
-
-
-2. Step Trainer Records (data from the motion sensor):
-
-AWS S3 Bucket URI - s3://cd0030bucket/step_trainer/
-
-contains the following fields:
-
-sensorReadingTime
-serialNumber
-distanceFromObject
-3. Accelerometer Records (from the mobile app):
-
-AWS S3 Bucket URI - s3://cd0030bucket/accelerometer/
-
-contains the following fields:
-
-timeStamp
-serialNumber
-x
-y
-z
+3. [accelerometer landing](./images/accelerometer_landing.png)
